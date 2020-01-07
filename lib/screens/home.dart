@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lab3/screens/register.dart';
+import 'package:lab3/screens/secondPage.dart';
+//import 'package:lab3/screens/thirdPage.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -6,6 +9,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final String titleString = "_HomeStage";
+  var textEditController = new TextEditingController();
+
   Widget showName() {
     return Text('ยินดีต้อนรับ',
         style: TextStyle(
@@ -30,7 +36,7 @@ class _HomeState extends State<Home> {
       style: TextStyle(
           fontSize: 30.0,
           fontWeight: FontWeight.bold,
-          color: Colors.purple[300],
+          color: Colors.lightBlue[300],
           //fontStyle: FontStyle.normal
           fontFamily: 'Mitr'),
     );
@@ -73,6 +79,7 @@ class _HomeState extends State<Home> {
             labelText: 'Password : ',
             hintText: 'Your Password'),
       ),
+      
     );
   }
 
@@ -85,8 +92,12 @@ class _HomeState extends State<Home> {
           color: Colors.green[100],
         ),
         color: Colors.green,
-        label: Text('Login'),
-        onPressed: () {},
+        label: Text('Login', style: TextStyle(color: Colors.lightBlue[200]),),
+        onPressed: () {
+          var route = MaterialPageRoute(
+            builder: (BuildContext context) => SecondPage() );
+            Navigator.of(context).push(route);
+        },
       ),
     );
   }
@@ -101,7 +112,11 @@ class _HomeState extends State<Home> {
         ),
         color: Colors.blue,
         label: Text('Register'),
-        onPressed: () {},
+        onPressed: () {
+          var route = MaterialPageRoute(
+            builder: (BuildContext context) => RegisterPage() );
+            Navigator.of(context).push(route);
+        },
       ),
     )
     ;
