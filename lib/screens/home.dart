@@ -79,24 +79,27 @@ class _HomeState extends State<Home> {
             labelText: 'Password : ',
             hintText: 'Your Password'),
       ),
-      
     );
   }
 
   Widget button() {
     return Container(
       width: 250,
-      child: RaisedButton.icon(
+      child: ElevatedButton.icon(
         icon: Icon(
           Icons.account_circle,
           color: Colors.green[100],
         ),
-        color: Colors.green,
-        label: Text('Login', style: TextStyle(color: Colors.lightBlue[200]),),
+        style: ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.green)),
+        label: Text(
+          'Login',
+          style: TextStyle(color: Colors.lightBlue[200]),
+        ),
         onPressed: () {
           var route = MaterialPageRoute(
-            builder: (BuildContext context) => SecondPage() );
-            Navigator.of(context).push(route);
+              builder: (BuildContext context) => SecondPage());
+          Navigator.of(context).push(route);
         },
       ),
     );
@@ -105,21 +108,23 @@ class _HomeState extends State<Home> {
   Widget buttonRegis() {
     return Container(
       width: 250,
-      child: RaisedButton.icon(
+      child: ElevatedButton.icon(
         icon: Icon(
           Icons.new_releases,
           color: Colors.blue[100],
         ),
-        color: Colors.blue,
+        style:
+            ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+
+        // color: Colors.blue,
         label: Text('Register'),
         onPressed: () {
           var route = MaterialPageRoute(
-            builder: (BuildContext context) => RegisterPage() );
-            Navigator.of(context).push(route);
+              builder: (BuildContext context) => RegisterPage());
+          Navigator.of(context).push(route);
         },
       ),
-    )
-    ;
+    );
   }
 
   @override
@@ -151,7 +156,6 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
-        
       ),
     );
   }

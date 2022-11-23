@@ -40,7 +40,7 @@ class _SecondPageState extends State<SecondPage> {
       ),
 
         ListTile(
-          title: RaisedButton(
+          title: ElevatedButton(
             child: Text('Next Show in Third Page'),
             onPressed: () {
               var route = MaterialPageRoute(

@@ -6,7 +6,7 @@ class ThirdPage extends StatefulWidget {
   this.valueFromSecondPage,
   this.valueFromSecondPage1,
   this.valueFromSecondPage2,
-  this.valueFromSecondPage3
+  this.valueFromSecondPage3,
   }):super(key:key);
   
   @override
